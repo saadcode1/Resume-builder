@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+    <style>
+  
+        /* template style */
+        
+.resume{
+    width: 21cm;
+    min-height: 24.7cm;
+    margin: 1cm auto;
+    padding: 0.5cm;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+.head h3{
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+.head h4{
+    letter-spacing: 2px;
+   
+}
+.head{
+    border-bottom:1px solid black;
+}
+.colum{
+    border-bottom:1px solid black;
+}
+#education-1{
+    text-align: justify;
+}
+
+#objectiv{
+    text-align: justify;
+}
+#experience{
+    text-align: justify;
+}
+.contact li{
+    margin-bottom: 5px;
+}
+@media print {
+            .resume{
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: 1400px;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+        .none{
+           
+        }
+        .inp-main .row{
+           justify-content: center;
+        }
+        .input-fields-none{
+           
+        }
+        .sv-ed{
+         
+        }
+       #btn-ed{
+     
+       }
+       #cv-gen{
+       
+       }
+        /* end of template style */
+      html{    
+        
+}
+
+#feedback-page{
+	text-align:center;
+}
+
+#form-main{
+	width:100%;
+	float:left;
+	padding-top:0px;
+}
+
+#form-div {
+	background-color:rgba(72,72,72,0.4);
+	padding-left:35px;
+	padding-right:35px;
+	padding-top:35px;
+	padding-bottom:50px;
+	width: 450px;
+	float: left;
+	left: 50%;
+	position: absolute;
+  margin-top:30px;
+	margin-left: -260px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+.feedback-input {
+	color:#3c3c3c;
+	font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+	font-size: 18px;
+	border-radius: 0;
+	line-height: 22px;
+	background-color: #fbfbfb;
+	padding: 13px 13px 13px 54px;
+	margin-bottom: 10px;
+	width:100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+  border: 3px solid rgba(0,0,0,0);
+}
+
+.feedback-input:focus{
+	background: #fff;
+	box-shadow: 0;
+	border: 3px solid #3498db;
+	color: #3498db;
+	outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+.focused{
+	color:#30aed6;
+	border:#30aed6 solid 3px;
+}
+
+/* Icons ---------------------------------- */
+#name{
+	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#name:focus{
+	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-size: 30px 30px;
+	background-position: 8px 5px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#email{
+	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#email:focus{
+	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-size: 30px 30px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#comment{
+	background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+	background-color:white;
+}
+
+#button-blue{
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+	float:left;
+	width: 100%;
+	border: #fbfbfb solid 4px;
+	cursor:pointer;
+	background-color: #3498db;
+	color:white;
+	font-size:24px;
+	padding-top:22px;
+	padding-bottom:22px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+
+#button-blue:hover{
+	background-color: rgba(0,0,0,0);
+	color: #0493bd;
+}
+	
+.submit:hover {
+	color: #3498db;
+}
+	
+.ease {
+	width: 0px;
+	height: 74px;
+	background-color: #fbfbfb;
+	-webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
+	-o-transition: .3s ease;
+	-ms-transition: .3s ease;
+	transition: .3s ease;
+}
+
+.submit:hover .ease{
+  width:100%;
+  background-color:white;
+}
+
+@media only screen and (max-width: 580px) {
+	#form-div{
+		left: 3%;
+		margin-right: 3%;
+		width: 88%;
+		margin-left: 0;
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+}
+.template-show{
+    display:none;
+}
+.form-2{
+    display: none;
+}
+.form-3{
+    display: none;
+}
+.form-4{
+    display: none;
+}
+.form-5{
+    display: none;
+}
+.form-6{
+    display: none;
+}
+.form-7{
+    display: none;
+}
+.sv-ed-container{
+    display:none;
+}
+.form-control-1:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+#date-span{
+ position: absolute;
+ margin-top: -48px;
+ margin-left:550px ;
+}
+.nav{
+background-color:red;
+margin-left:-100x;
+
+position: absolute;
+}
+.bg-image{
+  background:url("bg-image.jpg") no-repeat;
+  background-size: cover;
+  height:100vh;
+  
+}
+    </style>
+</head>
+<body> 
+  
+
+     <!-- resume -->
+     <div class="resume template-show">
+        <div class="head">
+            <!-- adddimg name and professions -->
+            <h2 id="template-name"></h2>
+            <h4 id="template-job"></h4>
+           </div>
+           <!-- persnol info -->
+           <div class="colum">
+            <h3 class="mt-3">Contacts</h3>
+              <ul id="contact">
+               <li id="template-mail"></li>
+               <li id="template-number"></li>
+               <li id="template-address"></li>
+              </ul>
+           </div>
+           <!-- skilss -->
+           <div class="colum-1 ">
+            <h3 class="mt-3">Skills</h3>
+             <!-- list skill dynamically -->
+            <ul id="ul-skill">
+           
+            </ul>
+         </div>
+         <!-- education -->
+         <div class="colum-2 ">
+            <h3 class="">Education</h3>
+            <span id="date-span"><span id="start">02/04/20019</span>&nbsp;&nbsp;to&nbsp;&nbsp;<span id="end">02/04/2021</span></span>
+            <ul id="ul-edu" class="edu_dlt_1">
+           <!-- education addd dynamically -->
+            </ul>
+         </div>
+         <!-- qualifications -->
+         <div class="colum-2 ">
+            <h3 class="">Qualifications</h3>
+            <ul id="Qualification">
+      <!-- qualification add dynamically -->
+             <li id="li-qua"></li>
+            </ul>
+         </div>
+
+          <!-- summary -->
+         <div class="colum-right">
+             <h3 class="summary">Summary</h3>
+             <ul id="summary-up">
+             <!-- summary add dynamically -->
+             <li id="li-summ"></li>
+             </ul>
+            </div>
+        <!-- experience -->
+        <div class="colum-right" id="btn-add">
+            <h3 class="exp">Experience</h3>
+           <ul id="ul-ex">
+
+           </ul>
+            <!-- adding dynamically -->
+        </div>
+        <!-- projects -->
+        <div class="colum-right">
+            <h3 class="pro">Project</h3>
+            <ul id="ul-project" class="project_dlt">
+               <!-- projects add dynamically -->
+            </ul>
+        </div>
+       
+    </div>
+    <!-- save Button -->
+    <div class="sv-ed-container">
+    <div class="container text-center sv-ed">
+        <button id="btn" class="btn btn-primary form-control-1" style="width: 100%; height: 50px;font-size: 23px;background-color: rgb(21, 132, 21);border: none;">Save</button>
+    </div>
+    <!-- edit button -->
+    <div  id="btn-ed-1" class="container text-center mt-2">
+        <button id="btn-ed" class="btn btn-danger form-control-1" style="width: 100%; height: 50px;font-size: 23px;background-color: rgb(198, 48, 48);border: none;margin-top:5px;">Edit</button>
+    </div>
+</div>
+    <!-- end of resume -->
+    <div class="bg-image">
+    <h1 style="color:grey;text-align:center;margin:0;margin-top:-15px;">Resume Preferences Form</h1>
+    <div id="form-main" class="form-1">
+        <div id="form-div">
+          <div class="form" id="form1">
+            
+            <p class="name">
+              <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="resume-name" required />
+            </p>
+            
+            <p class="email">
+              <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="resume-email" placeholder="Email" required />
+            </p>
+            
+            <p class="email adress">
+                <input name="address" type="text" class="validate[required,custom[email]] feedback-input" id="resume-address" placeholder="Address" required />
+              </p>
+
+              <p class="email number">
+                <!-- <input name="number" type="number" class="validate[required,custom[email]] feedback-input" id="resume-no" placeholder="Number" required /> -->
+                <input type="tel"  id="phone"  name="phone" class="validate[required,custom[email]] feedback-input"  pattern="[6-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9]" size="15" maxlength="14"  minlength="10" placeholder="Number" required />
+              </p>
+
+              <p class="email job-type">
+                <input name="job-type" type="text" class="validate[required,custom[email]] feedback-input" id="resume-job" placeholder="Job type" required/>
+              </p>
+                        
+            <div class="submit">
+              <button type="submit" value="SEND" id="button-blue" class="next-1">
+              NEXT
+            </button>
+            </div>
+        </div>
+        </div>
+</div>
+
+<div id="form-main" class="form-2">
+    <div id="form-div">
+      <div class="form skill-section" id="form1">
+        <div id="div-parent">
+            <input name="skill" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Skill" id="skill-1" required />
+            <button id="skill-add" style="margin-bottom:20px;"><a>+add more</a></button>
+        </div>
+          <!-- adding inputs dynamicaaly -->
+        
+        <div class="submit">
+          <button type="submit" value="SEND" id="button-blue" class="next-2">
+          NEXT
+        </button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div id="form-main" class="form-3">
+        <div id="form-div">
+          <div class="form project-section" id="form1">
+            <div id="project-parent">
+                <input name="project" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Projects" id="project-1" required />
+                <button id="project-add" style="margin-bottom:20px;"><a>+add more</a></button>
+            </div>
+              <!-- adding inputs dynamicaaly -->
+            
+            <div class="submit">
+              <button type="submit" value="SEND" id="button-blue" class="next-3">
+              NEXT
+            </button>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div id="form-main" class="form-4">
+            <div id="form-div">
+              <div class="form ex-section" id="form1">
+                <div id="ex-parent">
+                    <input name="ex" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Experience" id="ex-1" required/>
+                    <button id="ex-add" style="margin-bottom:20px;"><a>+add more</a></button>
+                </div>
+                  <!-- adding inputs dynamicaaly -->
+                
+                <div class="submit">
+                  <button type="submit" value="SEND" id="button-blue" class="next-4">
+                  NEXT
+                </button>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <div id="form-main" class="form-5">
+                <div id="form-div">
+                  <div class="form edu-section" id="form1">
+                    <div id="edu-parent">
+                        <input name="edu" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Education" id="edu-1" required/>
+                        <button id="edu-add" style="margin-bottom:20px;"><a>+add more</a></button>
+                        <input id="start-date" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" type="date" placeholder="Start date"  required/>
+                        <input id="end-date" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" type="date" placeholder="End date"  required/>
+                    </div>
+                      <!-- adding inputs dynamicaaly -->
+                    
+                    <div class="submit">
+                      <button type="submit" value="SEND" id="button-blue" class="next-5">
+                      NEXT
+                    </button>
+                    </div>
+                </div>
+                </div>
+                </div>    
+
+                <div id="form-main" class="form-6">
+                    <div id="form-div">
+                      <div class="form qua-section" id="form1">
+                        <div id="qua-parent">
+                            <textarea name="qua" rows="2" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Qualification" id="qua-1" required></textarea>
+                        </div>
+                          <!-- adding inputs dynamicaaly -->
+                        
+                        <div class="submit">
+                          <button type="submit" value="SEND" id="button-blue" class="next-6">
+                          NEXT
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+                    </div>    
+
+                    <div id="form-main" class="form-7">
+                        <div id="form-div">
+                          <div class="form summ-section" id="form1">
+                            <div id="summ-parent">
+                                <textarea name="summ" rows="2" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Summary" id="summ-1" required></textarea>
+                            </div>
+                              <!-- adding inputs dynamicaaly -->
+                            
+                            <div class="submit">
+                              <button type="submit" value="SEND" id="button-blue" class="next-7">
+                              NEXT
+                            </button>
+                            </div>
+                        </div>
+                        </div>
+                        </div> 
+</div>
+
+<script>
+    function select(elem){
+    return document.querySelector(elem);
+};   
+    let bg_image=select(".bg-image");
+
+    // selecting template tags
+    let tag_name=select("#template-name");
+    let tag_job=select("#template-job");
+    let tag_no=select("#template-number");
+    let tag_address=select("#template-address");
+    let tag_mail=select("#template-mail");
+    // template show
+    let template_show=select(".template-show");
+    // form 1
+    let form_1=select(".form-1");
+    // form-2
+    let form_2=select(".form-2");
+    // form-3
+    let form_3=select(".form-3");
+    // form-4
+    let form_4=select(".form-4");
+    // form-5
+    let form_5=select(".form-5");
+    // form-6
+    let form_6=select(".form-6");
+    // form-7
+    let form_7=select(".form-7");
+    // sv-ed-container edit and save buttons
+    let sv_ed=select(".sv-ed-container");
+
+    // next-1
+    let next_1=select(".next-1");
+    next_1.addEventListener("click",function(){
+        
+    // input fields
+    let inp_name=select("#resume-name").value;
+    let inp_email=select("#resume-email").value;
+    let inp_no=select("#phone").value;
+    let inp_address=select("#resume-address").value;
+    let inp_job=select("#resume-job").value;
+    // end of selecting input fields
+    if(inp_name == ""){
+    return alert("Name Was Empty")
+    }
+    
+    if(inp_email == ""){
+    return alert("email was empty")
+    }if(inp_no == ""){
+    return alert("number was Empty")
+    }if(inp_address == ""){
+    return alert("address was empty")
+    }if(inp_job == ""){
+    return alert("Job Type was empty")
+    }
+    else{
+       // adding input value to html tags
+    tag_name.innerText=inp_name;
+    tag_job.innerText=inp_job;
+    tag_no.innerHTML=inp_no;
+    tag_mail.innerText=inp_email;
+    tag_address.innerText=inp_address;
+
+    form_1.style.display="none";
+    form_2.style.display="block";
+    }
+  
+
+    })
+    
+    // skill add more
+    
+    let skill_btn=select("#skill-add");
+    skill_btn.addEventListener("click",function(){
+       let inpNew=document.createElement("input");
+       inpNew.classList.add("feedback-input[name='skill']");
+       inpNew.classList.add("feedback-input");
+       inpNew.setAttribute("name","skill");
+       inpNew.setAttribute("placeholder","skill");
+       let parent_div=select("#div-parent");
+       parent_div.insertBefore(inpNew,skill_btn); 
+    });
+
+    let next_2 = select(".next-2");
+    next_2.addEventListener("click", function() {
+      // skill inputs fields
+      let inp_skill=select("#skill-1").value;
+    // Select all input fields for skills
+    let skillInputs = document.querySelectorAll(".feedback-input[name='skill']");
+    if(inp_skill == ""){
+      alert("please fill info");
+    }else{
+      let str = "";
+    // Iterate over the input fields and gather their values
+    skillInputs.forEach(function(skillInput) {
+        str += `<li  style="margin:7px;">${skillInput.value}</li>`;
+
+    form_1.style.display="none";
+    form_2.style.display="none";
+    form_3.style.display="block";
+    
+    });
+
+    // Display the gathered skills in the resume template
+    select("#ul-skill").innerHTML = str;
+    }
+    
+});
+//    add more
+   let project_btn=select("#project-add");
+   project_btn.addEventListener("click",function(){
+    let inpNew=document.createElement("input");
+       inpNew.classList.add("feedback-input[name='project']");
+       inpNew.classList.add("feedback-input");
+       inpNew.setAttribute("name","project");
+       inpNew.setAttribute("placeholder","project");
+       let parent_div=select("#project-parent");
+       parent_div.insertBefore(inpNew,project_btn); 
+   });
+
+   let next_3=select(".next-3");
+   next_3.addEventListener("click",function(){
+    // projects input fields
+    let inp_project=select("#project-1").value;
+    // Select all input fields for skills
+    let projectInputs = document.querySelectorAll(".feedback-input[name='project']");
+    if(inp_project == ""){
+      alert("please fill info");
+    }else{
+      let str = "";
+    // Iterate over the input fields and gather their values
+    projectInputs.forEach(function(projectInput) {
+        str += `<li  style="margin:7px;">${projectInput.value}</li>`;
+
+    form_1.style.display="none";
+    form_2.style.display="none";
+    form_3.style.display="none";
+    form_4.style.display="block";
+    });
+
+    // Display the gathered skills in the resume template
+    select("#ul-project").innerHTML = str;
+    }
+ 
+   });
+
+  //  ex-add more btn   
+   let ex_btn=select("#ex-add");
+   ex_btn.addEventListener("click",function(){
+    let inpNew=document.createElement("input");
+       inpNew.classList.add("feedback-input[name='ex']");
+       inpNew.classList.add("feedback-input");
+       inpNew.setAttribute("name","ex");
+       inpNew.setAttribute("placeholder","Experience");
+       let parent_div=select("#ex-parent");
+       parent_div.insertBefore(inpNew,ex_btn);
+   });
+
+//    next-4
+   let next_4=select(".next-4");
+   next_4.addEventListener("click",function(){
+    // ex input fileds
+    let inp_ex=select("#ex-1").value;
+   // Select all input fields for skills
+   let exInputs = document.querySelectorAll(".feedback-input[name='ex']");
+   if(inp_ex == ""){
+    alert("please fill info");
+   }else{
+    let str = "";
+    // Iterate over the input fields and gather their values
+    exInputs.forEach(function(exInput) {
+        str += `<li style="margin:7px;">${exInput.value}</li>`;
+    });
+
+    // Display the gathered skills in the resume template
+    select("#ul-ex").innerHTML = str;
+
+    form_1.style.display="none";
+    form_2.style.display="none";
+    form_3.style.display="none";
+    form_4.style.display="none";
+    form_5.style.display="block";
+   }
+   
+   });
+    
+//    education add more
+   let edu_btn=select("#edu-add")
+    edu_btn.addEventListener("click",function(){
+    let inpNew=document.createElement("input");
+       inpNew.classList.add("feedback-input[name='edu']");
+       inpNew.classList.add("feedback-input");
+       inpNew.setAttribute("name","edu");
+       inpNew.setAttribute("placeholder","Education");
+       let parent_div=select("#edu-parent");
+       parent_div.insertBefore(inpNew,edu_btn);
+   });
+
+//   next-5
+    let next_5=select(".next-5");
+    next_5.addEventListener("click",function(){
+      let inp_edu=select("#edu-1").value;
+    // Select all input fields for skills
+   let eduInputs = document.querySelectorAll(".feedback-input[name='edu']");
+    let str = "";
+    // Iterate over the input fields and gather their values
+    eduInputs.forEach(function(eduInput) {
+        str += `<li style="margin:7px;">${eduInput.value}</li>`;
+         // date includes
+         let inp_start=select("#start-date").value;
+        let inp_end=select("#end-date").value;
+
+        if(inp_start == ""){
+          alert("fill the information");
+        }
+        else{
+        // date spans
+        let start=select("#start").innerText=inp_start;
+        let end=select("#end").innerText=inp_end;
+
+        select("#ul-edu").innerHTML = str;
+
+form_1.style.display="none";
+form_2.style.display="none";
+form_3.style.display="none";
+form_4.style.display="none";
+form_5.style.display="none";
+form_6.style.display="block";
+        }
+    });
+     
+    // Display the gathered skills in the resume template
+    // select("#ul-edu").innerHTML = str;
+
+    // form_1.style.display="none";
+    // form_2.style.display="none";
+    // form_3.style.display="none";
+    // form_4.style.display="none";
+    // form_5.style.display="none";
+    // form_6.style.display="block";
+    });
+
+    // qualification next-6
+    let next_6=select(".next-6");
+    next_6.addEventListener("click",function(){
+    let inp=select("#qua-1").value;
+    if(inp == ""){
+      alert("please fill info");
+    }else{
+      let li=select("#li-qua");
+    li.innerText=inp;
+
+    form_1.style.display="none";
+    form_2.style.display="none";
+    form_3.style.display="none";
+    form_4.style.display="none";
+    form_5.style.display="none";
+    form_6.style.display="none";
+    form_7.style.display="block";
+    }
+ 
+    });
+
+    // summary next-7
+    let next_7=select(".next-7");
+    next_7.addEventListener("click",function(){
+    let inp=select("#summ-1").value;
+    if(inp == ""){
+      alert("please fill info");
+    }else{
+      let li=select("#li-summ");
+    li.innerText=inp;
+
+    form_1.style.display="none";
+    form_2.style.display="none";
+    form_3.style.display="none";
+    form_4.style.display="none";
+    form_5.style.display="none";
+    form_6.style.display="none";
+    form_7.style.display="none";
+    bg_image.style.display="none";
+    template_show.style.display="block";
+    sv_ed.style.display="block";
+    
+    }
+    
+    });
+
+    // edit functionality
+    let edit=select("#btn-ed");
+    edit.addEventListener("click",function(){
+        template_show.style.display="none";
+        sv_ed.style.display="none";
+        bg_image.style.display="block";
+        form_1.style.display="block";
+    })
+
+    
+        // Download cv
+        btn=document.querySelector("#btn");
+        btn.addEventListener("click",function(){
+            let ed_sv=select(".sv-ed-container");
+            ed_sv.style.display="none";
+            window.print();
+            ed_sv.style.display="block";
+           
+        });
+//    let skill_1=select("#skill-1");
+//    let str="";
+//    let next_2=select(".next-2");
+//    next_2.addEventListener("click",function(){
+//     for(let sk of skill_1){
+//         str=str+`<li>${sk.value}</li>`
+//     }
+//     select("#ul-skill").innerHTML=str;
+//    });
+
+</script>
+</body>
+</html>

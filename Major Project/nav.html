@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .main-nav{
+            width: 100vw;
+            border-bottom: 1px solid grey;
+            background-color: lightgreen;
+            position: relative;
+        }
+        .sec-nav{
+        
+            height: 8vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2vw;
+        }
+        .sec-nav h2{
+            font-size: 2vw;
+        }
+        .cards{
+            width: 20vw;
+            height: 60vh;
+            border: 2px solid greenyellow;
+            overflow: hidden;
+            display: flex; 
+        }
+        .cards:hover{
+            cursor: pointer;
+            
+        }
+        .container{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content:space-evenly;
+            flex-wrap: wrap;
+            padding: 6vw 0;
+            background-color:wheat ;
+        }
+        .image{
+            background-size:cover;
+           background-position:center;
+           width: 330px;
+        }
+        a{
+            text-decoration: none;
+        }
+      
+        @media (max-width:600px) {
+            .sec-nav h2{
+            font-size: 7vw;
+        }
+        .sec-nav{
+          
+            display: flex;
+            align-items: center;
+           justify-content: center;
+        }
+        .cards{
+            width: 80vw;
+            height: 60vh;
+            border: 2px solid greenyellow;
+            margin-top: 20px;
+        }
+        .image{
+            width:80vw;
+          
+        }
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <!-- nav-bar -->
+    <div class="main-nav">
+        <div class="sec-nav">
+            <h2>Resume Builder</h2>
+        </div>
+    </div>
+    <!-- body -->
+    <!-- row 1 -->
+    <div class="container">
+        <a href="./template/template_1.html">
+            <div class="cards">
+                <image class="image" src="resume_1.png"/>
+            </div>
+        </a>
+
+           <a href="./template/template_3.html"><div class="cards">
+                <image class="image" src="resume_3.png"/>
+            </div>
+        </a> 
+        <a href="./template/template_5.html">
+            <div class="cards">
+                <image  class="image" src="resume_5.png"/>
+            </div> 
+        </a>
+    </div>
+<!-- row 2 -->
+    <div class="container">
+        <a href="./template/template_6.html">
+        <div class="cards">
+            <image class="image" src="resume_6.png"/>
+        </div>
+    </a>
+    <a href="./template/template_7.html"> 
+        <div class="cards">
+            <image class="image" src="resume_7.png"/>
+        </div>
+    </a>
+    <a href="./template/template_9.html">
+        <div class="cards">
+            <image class="image" src="resume_9.png"/>
+        </div> 
+    </a>
+</div>
+
+<!-- row 3 -->
+<div class="container">
+      <a href="./template/template_11.html">
+    <div class="cards">
+        <image class="image" src="resume_11.png"/>
+    </div>
+</a> 
+<a href="./template/template_12.html">
+    <div class="cards">
+        <image class="image" src="resume_12.png"/>
+    </div>
+</a>
+<a href="template_10.html">
+    <div class="cards">
+        <image class="image" src="resume_10 .png"/>
+    </div> 
+</a>
+</div>
+
+<!-- !-- row 4 --> 
+<div class="container">
+       <a href="template_13.html">
+    <div class="cards">
+        <image class="image" src="resume_13.png"/>
+    </div>
+</a>
+
+   
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script>
+
+    let tl=gsap.timeline();
+
+    tl.from(".main-nav",{
+    y:-30,
+    opacity:0,
+    duration:0.5,
+    delay:0.3,
+    stagger:0.3
+    });
+
+    gsap.from(".cards",{
+    scale:0,
+    duration:1,
+    delay:0.5,
+    stagger:0.3,
+    rotate:(360),
+    });
+
+   
+   </script>
+</body>
+</html>
